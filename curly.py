@@ -1,7 +1,11 @@
-import httplib
 import subprocess
 import os
 import sys
+
+if(sys.version_info[0] < 3):
+    import httplib
+else:
+    import http.client as httplib
 
 
 class CurlError(Exception):
